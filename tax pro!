@@ -1,0 +1,23 @@
+#Project - Income Tax Calculator
+
+#All taxpayers are charged a flat tax rate of 20%
+#All taxpayers are allowed a $10,000 standard deduction
+#For each dependent, a taxpayer is allowed an additional $3,000 deduction
+#Gross income must be entered to the nearest penny
+#The income tax is expressed as a decimal number
+
+tax_rate = float(0.20)
+standard_deduct = 10000
+dependent_deduct = 3000
+
+gross_income =float(input("What is your gross income? "))
+dependents = int(input("How many dependents do you have in your household? "))
+
+if dependents > 0:
+	dependent_deduct = 3000 * dependents
+	
+gross_income -= tax_rate + dependent_deduct
+
+income_tax = round(tax_rate * gross_income, 2)
+
+print("Your total income tax is:$", income_tax)
